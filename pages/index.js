@@ -1,1 +1,5 @@
-export default () => <span>index</span>
+function Index() {
+    return <span>index</span> 
+}
+
+export default Index;
