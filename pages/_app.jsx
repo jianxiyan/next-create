@@ -1,6 +1,8 @@
-import React from 'react'
-import App from 'next/app'
-import Layout from '../components/Layout'
+import React from 'react';
+import App from 'next/app';
+import { Provider } from 'react-redux'
+import Layout from '../components/Layout';
+import withReduxStore from '../lib/with_redux';
 
 import 'antd/dist/antd.css';
 
@@ -18,13 +20,16 @@ class MyApp extends App {
     }
 
     render() {
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps, withRedux } = this.props;
+        console.log(withRedux)
         return (
-            <Layout>
-                <Component {...pageProps}/>
-            </Layout>
+            <Provider store={withRedux}>
+                <Layout>
+                    <Component {...pageProps}/>
+                </Layout>
+            </Provider>
         )
     }
 }
 
-export default MyApp;
+export default withReduxStore(MyApp);
