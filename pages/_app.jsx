@@ -20,10 +20,9 @@ class MyApp extends App {
     }
 
     render() {
-        const { Component, pageProps, withRedux } = this.props;
-        console.log(withRedux)
+        const { Component, pageProps, reduxStore } = this.props;
         return (
-            <Provider store={withRedux}>
+            <Provider store={reduxStore}>
                 <Layout>
                     <Component {...pageProps}/>
                 </Layout>
