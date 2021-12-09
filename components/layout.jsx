@@ -11,7 +11,7 @@ function Layout({children}) {
             </Link>
             <Link href="/test/b">
                 {/* //唯一节点 */}
-                <Button>B</Button>
+                <Button>B1</Button>
             </Link>
             <div>
                 {children}
